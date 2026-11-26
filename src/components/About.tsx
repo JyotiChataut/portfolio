@@ -15,10 +15,10 @@ export function About() {
               I am an Information Technology Engineering graduate from NCIT who thinks about interfaces the same way I think about crochet. Stitch by stitch, row by row, with attention to how each thread connects to the next.
             </p>
             <p>
-              I enjoy shaping layouts where readability, rhythm, and small interaction details make information easier to use. My projects span travel, recipe, and personal publishing interfaces built with responsive web practices.
+              I enjoy shaping layouts where readability, rhythm, and small interaction details make information easier to use. My projects span commerce ecosystems, enterprise SaaS platforms, artisan showcases, and responsive web applications.
             </p>
             <p>
-              Outside the code, my blog Chrochet and this portfolio share the same making mindset: careful structure, visible craft, and attention to how pieces come together.
+              Outside the code, projects like Chrochet, Nuvola Market, and this portfolio share the same making mindset: careful structure, visible craft, and attention to how pieces come together.
             </p>
           </div>
         </div>
