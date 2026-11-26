@@ -32,6 +32,7 @@ function shuffledIndices(): number[] {
 export function Hero() {
   const [imageOrder, setImageOrder] = useState<number[]>(() => Array.from({ length: IMAGE_COUNT }, (_, i) => i))
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
+  const [paused, setPaused] = useState(false)
   const reduceMotion = useReducedMotion()
   const focusRestoreRef = useRef<HTMLElement | null>(null)
   const lightboxRef = useRef<HTMLDivElement>(null)
@@ -42,12 +43,12 @@ export function Hero() {
   }, [])
 
   useEffect(() => {
-    if (lightboxIndex !== null) return
+    if (lightboxIndex !== null || paused || reduceMotion) return
     const interval = setInterval(() => {
       setImageOrder(shuffledIndices())
     }, 5000)
     return () => clearInterval(interval)
-  }, [lightboxIndex])
+  }, [lightboxIndex, paused, reduceMotion])
 
   const openLightbox = useCallback((imgIdx: number, el: HTMLElement) => {
     focusRestoreRef.current = el
@@ -74,13 +75,35 @@ export function Hero() {
 
   useEffect(() => {
     if (lightboxIndex === null) return
+    document.body.style.overflow = 'hidden'
     const handler = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') closeLightbox()
-      if (e.key === 'ArrowLeft') { e.preventDefault(); prevImage() }
-      if (e.key === 'ArrowRight') { e.preventDefault(); nextImage() }
+      if (e.key === 'Escape') {
+        closeLightbox()
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault()
+        prevImage()
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault()
+        nextImage()
+      } else if (e.key === 'Tab') {
+        const focusables = lightboxRef.current?.querySelectorAll<HTMLElement>('button:not(:disabled)')
+        if (!focusables || focusables.length === 0) return
+        const first = focusables[0]
+        const last = focusables[focusables.length - 1]
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault()
+          last.focus()
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault()
+          first.focus()
+        }
+      }
     }
     window.addEventListener('keydown', handler)
-    return () => window.removeEventListener('keydown', handler)
+    return () => {
+      window.removeEventListener('keydown', handler)
+      document.body.style.overflow = ''
+    }
   }, [lightboxIndex, closeLightbox, prevImage, nextImage])
 
   useEffect(() => {
@@ -98,17 +121,18 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-[100dvh] overflow-hidden px-4 pt-16 pb-4 sm:px-6 lg:px-8"
+      className="relative overflow-hidden bg-brand-teal-deep px-4 pt-16 pb-8 sm:px-6 lg:px-8"
       aria-label="Jyoti Chataut portfolio hero"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      onFocus={() => setPaused(true)}
+      onBlur={() => setPaused(false)}
     >
-      <div className="pointer-events-none absolute inset-0 select-none" aria-hidden="true">
-        <img src="/images/crochet_1.jpg" alt="" className="h-full w-full object-cover opacity-60" />
-      </div>
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-cream/70 via-cream/30 to-transparent" aria-hidden="true" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(0,237,100,0.08),transparent_60%)]" aria-hidden="true" />
 
       <WeaveGrid
-        className="relative mx-auto min-h-[calc(100dvh-5rem)] max-w-[1400px] bg-ivory/90 shadow-thread backdrop-blur-[2px] sm:min-h-[calc(100dvh-6rem)] lg:min-h-[calc(100dvh-6rem)]"
-        cellClassName="bg-ivory/40"
+        className="relative mx-auto min-h-[calc(100dvh-6rem)] max-w-[1280px]"
+        cellClassName="bg-brand-teal-deep"
         renderCell={(index) => {
           const imgIndex = imageOrder[index]
           if (imgIndex === undefined) return null
@@ -116,35 +140,50 @@ export function Hero() {
             <motion.button
               key={imgIndex}
               type="button"
-              className="group relative h-full w-full overflow-hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-rust focus-visible:outline-offset-[-2px]"
+              className="group relative h-full w-full overflow-hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-green focus-visible:outline-offset-[-2px]"
               onClick={(e) => openLightbox(imgIndex, e.currentTarget)}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: reduceMotion ? 0 : 0.4 }}
             >
-              <div className="absolute inset-4 overflow-hidden">
+              <div className="absolute inset-3 overflow-hidden rounded-lg">
                 <Image
                   src={`/images/${imgIndex + 1}.jpg`}
                   alt={IMAGE_ALTS[imgIndex]}
                   fill
-                  className="object-cover object-center transition-all duration-500 group-hover:scale-[1.04]"
+                  className="object-cover object-center transition-transform duration-500 motion-safe:group-hover:scale-[1.04]"
                   sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                  priority={index < 4}
                 />
               </div>
             </motion.button>
           )
         }}
         feature={
-          <div className="flex h-full min-h-[48dvh] flex-col justify-center px-6 py-10 sm:px-10 lg:min-h-0 lg:px-14">
-            <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-rust-text">
-              Frontend & design
+          <div className="flex h-full min-h-[52dvh] flex-col justify-center px-6 py-10 sm:px-10 lg:min-h-0 lg:px-14">
+            <p className="text-[11px] font-semibold uppercase tracking-[1px] text-brand-green">
+              Frontend &amp; design
             </p>
-            <h1 className="mt-4 max-w-[9ch] font-display text-6xl font-semibold leading-[0.9] tracking-[-0.04em] text-deep sm:text-7xl lg:max-w-[11ch] lg:text-8xl">
+            <h1 className="mt-4 max-w-[10ch] text-5xl font-medium leading-[1.05] tracking-[-1.5px] text-on-dark sm:text-6xl lg:max-w-[13ch] lg:text-7xl">
               Jyoti Chataut
             </h1>
-            <p className="mt-6 max-w-[28ch] font-body text-lg leading-relaxed text-mocha sm:text-xl">
-              I care about the space between the pixels.
+            <p className="mt-6 max-w-[32ch] text-lg leading-[1.5] text-on-dark-muted">
+              I weave code the way I crochet: stitch by stitch, with care for how each thread connects.
             </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a
+                href="#work"
+                className="rounded-full bg-brand-green px-6 py-2.5 text-sm font-semibold leading-[1.3] text-on-primary transition-colors hover:bg-brand-green-mid focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-green"
+              >
+                View work
+              </a>
+              <a
+                href="#contact"
+                className="rounded-full border border-hairline-dark px-6 py-2.5 text-sm font-semibold leading-[1.3] text-on-dark transition-colors hover:border-brand-green hover:text-brand-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-green"
+              >
+                Start a thread
+              </a>
+            </div>
           </div>
         }
       />
@@ -154,7 +193,7 @@ export function Hero() {
           <motion.div
             key="lightbox"
             ref={lightboxRef}
-            className="fixed inset-0 z-[60] flex items-center justify-center bg-deep/85 p-4 backdrop-blur-sm sm:p-6"
+            className="fixed inset-0 z-[60] flex items-center justify-center bg-ink/90 p-4 backdrop-blur-sm sm:p-6"
             tabIndex={-1}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -179,18 +218,18 @@ export function Hero() {
                 type="button"
                 onClick={prevImage}
                 disabled={lightboxIndex === 0}
-                className="absolute left-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center border border-ivory/20 bg-deep/50 font-mono text-lg text-ivory opacity-80 transition-all hover:bg-rust/70 hover:opacity-100 disabled:cursor-not-allowed disabled:opacity-15"
+                className="absolute left-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-hairline-dark bg-canvas-dark font-mono text-lg text-on-dark transition-colors hover:border-brand-green disabled:cursor-not-allowed disabled:opacity-15 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-green focus-visible:outline-offset-2"
                 aria-label="Previous image"
               >
                 &#8592;
               </button>
 
-              <div className="flex items-center justify-center overflow-hidden bg-deep/10">
+              <div className="flex items-center justify-center overflow-hidden">
                 <img
                   key={lightboxIndex}
                   src={`/images/${lightboxIndex + 1}.jpg`}
                   alt={IMAGE_ALTS[lightboxIndex]}
-                  className="max-h-[92vh] max-w-[95vw] object-contain"
+                  className="max-h-[92vh] max-w-[95vw] rounded-lg object-contain"
                   draggable={false}
                 />
               </div>
@@ -199,7 +238,7 @@ export function Hero() {
                 type="button"
                 onClick={nextImage}
                 disabled={lightboxIndex === IMAGE_COUNT - 1}
-                className="absolute right-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center border border-ivory/20 bg-deep/50 font-mono text-lg text-ivory opacity-80 transition-all hover:bg-rust/70 hover:opacity-100 disabled:cursor-not-allowed disabled:opacity-15"
+                className="absolute right-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-hairline-dark bg-canvas-dark font-mono text-lg text-on-dark transition-colors hover:border-brand-green disabled:cursor-not-allowed disabled:opacity-15 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-green focus-visible:outline-offset-2"
                 aria-label="Next image"
               >
                 &#8594;
@@ -208,13 +247,13 @@ export function Hero() {
               <button
                 type="button"
                 onClick={closeLightbox}
-                className="absolute right-3 top-3 z-10 flex h-8 w-8 items-center justify-center border border-ivory/20 bg-deep/50 font-mono text-xs text-ivory opacity-80 transition-all hover:bg-rust/70 hover:opacity-100"
+                className="absolute right-3 top-3 z-10 flex h-8 w-8 items-center justify-center rounded-full border border-hairline-dark bg-canvas-dark font-mono text-xs text-on-dark transition-colors hover:border-brand-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-green focus-visible:outline-offset-2"
                 aria-label="Close lightbox"
               >
                 &#x2715;
               </button>
 
-              <p className="absolute bottom-3 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap bg-deep/70 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.12em] text-ivory">
+              <p className="absolute bottom-3 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded-full bg-canvas-dark px-3 py-1 font-mono text-xs tracking-[0.12em] text-on-dark">
                 {lightboxIndex + 1} / {IMAGE_COUNT}
               </p>
             </motion.div>

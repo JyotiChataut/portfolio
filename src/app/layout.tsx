@@ -1,25 +1,18 @@
 import type { Metadata } from 'next'
-import { Cormorant_Garamond, DM_Sans, JetBrains_Mono } from 'next/font/google'
+import { Poppins, Source_Code_Pro } from 'next/font/google'
 import './globals.css'
 
-const cormorant = Cormorant_Garamond({
+const euclid = Poppins({
   subsets: ['latin'],
-  weight: ['400', '600'],
-  variable: '--font-cormorant',
+  weight: ['400', '500', '600'],
+  variable: '--font-euclid',
   display: 'swap',
 })
 
-const dmSans = DM_Sans({
-  subsets: ['latin'],
-  weight: ['400', '500'],
-  variable: '--font-dm-sans',
-  display: 'swap',
-})
-
-const jetBrains = JetBrains_Mono({
+const sourceCode = Source_Code_Pro({
   subsets: ['latin'],
   weight: ['400'],
-  variable: '--font-jetbrains',
+  variable: '--font-source-code',
   display: 'swap',
 })
 
@@ -30,7 +23,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${dmSans.variable} ${jetBrains.variable}`}>
+    <html lang="en" className={`${euclid.variable} ${sourceCode.variable}`}>
       <body>{children}</body>
     </html>
   )

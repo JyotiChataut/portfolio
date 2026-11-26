@@ -72,7 +72,7 @@ export function WeaveGrid({ className = '', cellClassName = '', renderCell, feat
         {featureLayoutCells.map((cellClass, index) => (
           <motion.div
             key={cellClass}
-            className={`min-h-0 border-l border-t border-greige ${cellClass} ${cellClassName}`}
+            className={`min-h-0 border-l border-t border-hairline-dark ${cellClass} ${cellClassName}`}
             variants={{
               hidden: { opacity: 0 },
               show: { opacity: 1, transition: { duration: reduceMotion ? 0 : 0.6 } },
@@ -82,7 +82,7 @@ export function WeaveGrid({ className = '', cellClassName = '', renderCell, feat
           </motion.div>
         ))}
         <motion.div
-          className="col-span-2 col-start-1 row-start-2 border border-greige bg-cream sm:col-span-3 lg:col-start-2 lg:row-start-2 lg:col-span-3 lg:row-span-2"
+          className="col-span-2 col-start-1 row-start-2 border border-hairline-dark bg-brand-teal-mid sm:col-span-3 lg:col-start-2 lg:row-start-2 lg:col-span-3 lg:row-span-2"
           variants={{
             hidden: { opacity: 0 },
             show: { opacity: 1, transition: { duration: reduceMotion ? 0 : 0.6 } },
@@ -111,7 +111,7 @@ export function WeaveGrid({ className = '', cellClassName = '', renderCell, feat
       {cells.map((index) => (
         <motion.div
           key={index}
-          className={`min-h-0 border-l border-t border-greige ${edgeClasses(index)} ${visibilityClasses(
+          className={`min-h-0 border-l border-t border-hairline-dark ${edgeClasses(index)} ${visibilityClasses(
             index,
           )} ${cellClassName}`}
           variants={{

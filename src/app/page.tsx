@@ -9,15 +9,21 @@ import { Work } from '@/components/Work'
 
 export default function Home() {
   return (
-    <main>
-      <Navbar />
-      <Hero />
-      <About />
-      <Work />
-      <Hobbies />
-      <Skills />
-      <Credentials />
-      <Contact />
-    </main>
+    <>
+      <header>
+        <Navbar />
+      </header>
+      <main>
+        <Hero />
+        <About />
+        <Work />
+        <Hobbies />
+        <Skills />
+        <Credentials />
+      </main>
+      <footer>
+        <Contact />
+      </footer>
+    </>
   )
 }

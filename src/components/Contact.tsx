@@ -8,29 +8,27 @@ const links = [
 
 export function Contact() {
   return (
-    <section id="contact" className="px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-      <SectionReveal className="mx-auto max-w-[1400px] border border-greige bg-deep text-ivory">
-        <div className="grid lg:grid-cols-12">
-          <div className="border-b border-ivory/20 p-6 sm:p-8 lg:col-span-7 lg:border-b-0 lg:border-r lg:p-10">
-            <h2 className="font-display text-5xl font-semibold leading-none tracking-[-0.04em] sm:text-6xl">
+    <section id="contact" className="bg-brand-teal-deep px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+      <SectionReveal className="mx-auto max-w-[1280px]">
+        <div className="grid gap-10 lg:grid-cols-12">
+          <div className="lg:col-span-7">
+            <p className="text-[11px] font-semibold uppercase tracking-[1px] text-brand-green">Get in touch</p>
+            <h2 className="mt-3 font-display text-4xl font-medium leading-[1.1] tracking-[-0.5px] text-on-dark sm:text-5xl">
               Start a thread
             </h2>
-            <p className="mt-5 max-w-[42ch] text-lg leading-relaxed text-ivory/80">
-              Based in Imadol, Lalitpur. I am open to frontend roles where design detail and clean implementation both matter.
+            <p className="mt-4 max-w-[42ch] text-lg leading-[1.5] text-on-dark-muted">
+              Based in Imadol, Lalitpur. Open to new opportunities across frontend, full-stack, and design-adjacent roles, wherever clean implementation and thoughtful craft matter.
             </p>
           </div>
-          <div className="p-6 sm:p-8 lg:col-span-5 lg:p-10">
+          <div className="lg:col-span-5">
             <div className="grid gap-3">
               {links.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
-                  className="group flex items-center justify-between border border-ivory/35 px-5 py-4 font-mono text-sm uppercase tracking-[0.16em] text-ivory transition-colors hover:border-gold hover:text-gold active:translate-y-px"
+                  className="flex items-center justify-between rounded-full border border-hairline-dark px-6 py-3.5 text-sm font-semibold leading-[1.3] text-on-dark transition-colors hover:border-brand-green hover:text-brand-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-green"
                 >
                   {link.label}
-                  <span className="transition-transform group-hover:translate-x-1" aria-hidden="true">
-                    -&gt;
-                  </span>
                 </a>
               ))}
             </div>

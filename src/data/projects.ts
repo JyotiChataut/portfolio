@@ -22,7 +22,7 @@ export const projects: Project[] = [
     id: "nuvola",
     title: "Nuvola Commerce & Merchant Platform",
     description:
-      "A complete multi-service e-commerce ecosystem consisting of a high-performance Next.js 14 customer storefront, an independent merchant CMS console, and a Fastify 5 + PostgreSQL backend engine with strict role-based access control.",
+      "A multi-service e-commerce platform: a Next.js 14 storefront, an independent merchant CMS, and a Fastify 5 + PostgreSQL backend with role-based access control.",
     tags: ["Next.js 14", "Fastify 5", "TypeScript", "Drizzle ORM", "PostgreSQL", "Tailwind CSS"],
     repo: "https://github.com/JyotiChataut/Nuvola-Market",
     image: "/images/nuvola-market.jpg",
@@ -35,7 +35,7 @@ export const projects: Project[] = [
       problem:
         "Modern commerce platforms often blur administrative logic into customer-facing apps, causing security risks, bloated bundle sizes, and slow checkout experiences under heavy traffic.",
       approach:
-        "Architected three distinct decoupled services: a Fastify 5 REST API using Drizzle ORM and PostgreSQL as the single source of truth, an isolated merchant CMS admin panel with fine-grained capability checks, and a responsive Next.js 14 storefront with client-persisted cart state and idempotent checkout.",
+        "Architected three decoupled services: a Fastify 5 REST API on Drizzle ORM and PostgreSQL, an isolated merchant CMS with capability checks, and a responsive Next.js 14 storefront with idempotent checkout.",
       outcome:
         "A resilient, high-throughput commerce ecosystem with instant product discovery, multi-step checkout with server validation, and unified merchant catalog control.",
     },
@@ -52,14 +52,14 @@ export const projects: Project[] = [
       problem:
         "Inventory operations demand strict tenant isolation, zero inventory drift, and high responsiveness when handling large SKU catalogs, facility rebalances, and procurement cycles.",
       approach:
-        "Implemented strict tenant-isolated transactions (`withTenantTx`) with Drizzle ORM on PostgreSQL, background queue execution using BullMQ and Redis for batch operations, and built an interactive frontend using Next.js 15, TanStack Table, React Hook Form, and Radix UI.",
+        "Implemented tenant-isolated transactions with Drizzle ORM on PostgreSQL, background queues with BullMQ and Redis, and a Next.js 15 frontend with TanStack Table and Radix UI.",
       outcome:
-        "A scalable SaaS solution providing real-time stock visibility, audit-proof transaction ledgers, streamlined purchase order workflows, and sub-100ms API response times.",
+        "A scalable SaaS solution providing real-time stock visibility, audit-proof transaction ledgers, streamlined purchase order workflows, and fast API responses.",
     },
   },
   {
     id: "chrochet",
-    title: "Chrochet — Handcrafted Showcase & Store",
+    title: "Chrochet: Handcrafted Showcase & Store",
     description:
       "A boutique digital storefront and media gallery dedicated to handmade crochet creations, featuring interactive video reels, modal product inspections, dynamic category filters, and smooth motion choreography.",
     tags: ["Next.js 15", "React 19", "Framer Motion", "Tailwind CSS", "TypeScript"],
@@ -72,7 +72,7 @@ export const projects: Project[] = [
       approach:
         "Created an immersive visual presentation with custom video reel players, popup inspection cards, tactile photo galleries, and Framer Motion transitions designed around warm, crafted aesthetics.",
       outcome:
-        "An engaging web showcase that elevates handcrafted products, connects artisan storytelling with digital browsing, and delivers silky 60fps responsive interactions across mobile and desktop.",
+        "An engaging web showcase that elevates handcrafted products, connects artisan storytelling with digital browsing, and stays smooth on mobile and desktop.",
     },
   },
   {
