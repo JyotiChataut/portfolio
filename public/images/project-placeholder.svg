@@ -1,0 +1,8 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Project image placeholder</title>
+  <desc id="desc">A woven line placeholder for Jyoti to replace with a project screenshot.</desc>
+  <rect width="1200" height="800" fill="#FFF8F6"/>
+  <path d="M0 160H1200M0 320H1200M0 480H1200M0 640H1200M240 0V800M480 0V800M720 0V800M960 0V800" stroke="#E1CFCA" stroke-width="2"/>
+  <path d="M180 430C300 350 390 350 510 430C630 510 720 510 840 430C930 370 1005 354 1080 382" stroke="#C97B84" stroke-width="10" stroke-linecap="round"/>
+  <text x="80" y="110" fill="#3D1F2C" font-family="monospace" font-size="28" letter-spacing="4">PLACEHOLDER SCREENSHOT</text>
+</svg>

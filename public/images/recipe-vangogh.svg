@@ -1,0 +1,181 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="recipeTitle recipeDesc">
+  <title id="recipeTitle">Recipe — Van Gogh inspired still life</title>
+  <desc id="recipeDesc">A Van Gogh style still life with sunflowers, fruits, and kitchen elements in warm yellows and deep blues.</desc>
+
+  <defs>
+    <linearGradient id="wallGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A237E"/>
+      <stop offset="100%" stop-color="#283747"/>
+    </linearGradient>
+    <linearGradient id="tableGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5D4037"/>
+      <stop offset="100%" stop-color="#3E2723"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Wall background -->
+  <rect width="1200" height="800" fill="url(#wallGrad)"/>
+
+  <!-- Wall brushstroke texture -->
+  <g stroke-linecap="round" fill="none" opacity="0.15">
+    <path d="M0 50 C200 30 400 60 600 40 C800 20 1000 50 1200 30 L1200 0 L0 0 Z" stroke="#6A1B9A" stroke-width="6" stroke-dasharray="10 6"/>
+    <path d="M0 100 C200 80 400 110 600 90 C800 70 1000 100 1200 80" stroke="#4A148C" stroke-width="4" stroke-dasharray="8 5"/>
+    <path d="M0 150 C200 130 400 160 600 140 C800 120 1000 150 1200 130" stroke="#6A1B9A" stroke-width="5" stroke-dasharray="12 7"/>
+    <path d="M0 200 C200 180 400 210 600 190 C800 170 1000 200 1200 180" stroke="#4A148C" stroke-width="3" stroke-dasharray="7 5"/>
+  </g>
+
+  <!-- Table surface -->
+  <path d="M0 520 L1200 520 L1200 800 L0 800 Z" fill="url(#tableGrad)"/>
+  <path d="M0 520 L1200 520" stroke="#8D6E63" stroke-width="6"/>
+
+  <!-- Table brushstrokes -->
+  <g stroke-linecap="round" fill="none" opacity="0.25">
+    <path d="M0 560 C200 540 400 570 600 550 C800 530 1000 560 1200 540" stroke="#5D4037" stroke-width="5" stroke-dasharray="10 6"/>
+    <path d="M0 620 C200 600 400 630 600 610 C800 590 1000 620 1200 600" stroke="#4E342E" stroke-width="4" stroke-dasharray="8 5"/>
+    <path d="M0 700 C200 680 400 710 600 690 C800 670 1000 700 1200 680" stroke="#3E2723" stroke-width="3" stroke-dasharray="6 4"/>
+  </g>
+
+  <!-- Vase -->
+  <path d="M530 520 L540 400 L570 380 L630 380 L660 400 L670 520 Z" fill="#1B4F72"/>
+  <path d="M530 520 L540 400 L570 380 L630 380 L660 400 L670 520 Z" fill="none" stroke="#2980B9" stroke-width="3" stroke-dasharray="6 4"/>
+  <path d="M545 450 L655 450 M550 480 L650 480" stroke="#2980B9" stroke-width="2" stroke-dasharray="4 3" opacity="0.4"/>
+
+  <!-- Vase highlight -->
+  <path d="M550 410 L560 500" stroke="#3498DB" stroke-width="3" stroke-linecap="round" opacity="0.3"/>
+
+  <!-- Sunflowers -->
+  <g>
+    <!-- Flower 1 - center -->
+    <circle cx="600" cy="280" r="45" fill="#F4D03F" opacity="0.9"/>
+    <circle cx="600" cy="280" r="35" fill="#D4A017"/>
+    <circle cx="600" cy="280" r="20" fill="#5D4037"/>
+    <circle cx="600" cy="280" r="12" fill="#3E2723"/>
+
+    <!-- Petals around flower 1 -->
+    <g stroke-linecap="round" fill="none">
+      <path d="M555 280 Q540 260 555 240 Q570 260 555 280" fill="#F4D03F"/>
+      <path d="M575 240 Q570 215 585 205 Q595 225 575 240" fill="#F4D03F"/>
+      <path d="M610 235 Q620 210 640 215 Q635 235 610 235" fill="#F4D03F"/>
+      <path d="M645 260 Q670 245 675 265 Q655 275 645 260" fill="#F4D03F"/>
+      <path d="M650 295 Q675 305 665 325 Q648 315 650 295" fill="#F4D03F"/>
+      <path d="M635 325 Q640 350 620 355 Q615 340 635 325" fill="#F4D03F"/>
+      <path d="M595 330 Q590 355 570 350 Q575 335 595 330" fill="#F4D03F"/>
+      <path d="M555 315 Q530 330 525 310 Q540 300 555 315" fill="#F4D03F"/>
+      <path d="M545 290 Q520 285 530 265 Q545 275 545 290" fill="#F4D03F"/>
+    </g>
+
+    <!-- Petal outlines -->
+    <g stroke="#E65100" stroke-width="1.5" fill="none" opacity="0.5">
+      <path d="M555 280 Q540 260 555 240 Q570 260 555 280" />
+      <path d="M575 240 Q570 215 585 205 Q595 225 575 240" />
+      <path d="M610 235 Q620 210 640 215 Q635 235 610 235" />
+      <path d="M645 260 Q670 245 675 265 Q655 275 645 260" />
+      <path d="M650 295 Q675 305 665 325 Q648 315 650 295" />
+      <path d="M635 325 Q640 350 620 355 Q615 340 635 325" />
+      <path d="M595 330 Q590 355 570 350 Q575 335 595 330" />
+      <path d="M555 315 Q530 330 525 310 Q540 300 555 315" />
+      <path d="M545 290 Q520 285 530 265 Q545 275 545 290" />
+    </g>
+
+    <!-- Flower 2 - left -->
+    <circle cx="500" cy="320" r="35" fill="#F4D03F" opacity="0.8"/>
+    <circle cx="500" cy="320" r="25" fill="#D4A017"/>
+    <circle cx="500" cy="320" r="14" fill="#5D4037"/>
+    <circle cx="500" cy="320" r="8" fill="#3E2723"/>
+
+    <!-- Petals flower 2 -->
+    <g stroke-linecap="round" fill="none">
+      <path d="M465 320 Q450 305 460 290 Q475 300 465 320" fill="#F4D03F"/>
+      <path d="M485 288 Q480 268 495 262 Q500 280 485 288" fill="#F4D03F"/>
+      <path d="M515 285 Q525 265 540 272 Q530 288 515 285" fill="#F4D03F"/>
+      <path d="M535 310 Q555 300 555 320 Q540 325 535 310" fill="#F4D03F"/>
+      <path d="M530 340 Q545 358 528 360 Q520 345 530 340" fill="#F4D03F"/>
+      <path d="M500 350 Q495 370 480 365 Q482 350 500 350" fill="#F4D03F"/>
+      <path d="M470 340 Q450 350 448 335 Q463 330 470 340" fill="#F4D03F"/>
+    </g>
+
+    <!-- Flower 3 - right -->
+    <circle cx="700" cy="300" r="30" fill="#E6B800" opacity="0.7"/>
+    <circle cx="700" cy="300" r="22" fill="#D4A017"/>
+    <circle cx="700" cy="300" r="12" fill="#5D4037"/>
+    <circle cx="700" cy="300" r="7" fill="#3E2723"/>
+
+    <g stroke-linecap="round" fill="none">
+      <path d="M670 300 Q655 285 665 272 Q678 282 670 300" fill="#E6B800"/>
+      <path d="M690 272 Q685 252 700 248 Q705 265 690 272" fill="#E6B800"/>
+      <path d="M720 280 Q735 262 748 272 Q736 285 720 280" fill="#E6B800"/>
+      <path d="M728 310 Q748 305 745 325 Q730 318 728 310" fill="#E6B800"/>
+      <path d="M700 328 Q698 348 683 342 Q686 328 700 328" fill="#E6B800"/>
+      <path d="M672 322 Q655 335 648 320 Q662 315 672 322" fill="#E6B800"/>
+    </g>
+
+    <!-- Stems -->
+    <path d="M600 280 L600 400 M500 320 L540 400 M700 300 L650 400" stroke="#2E7D32" stroke-width="5" stroke-linecap="round"/>
+    <path d="M600 280 L600 400 M500 320 L540 400 M700 300 L650 400" stroke="#4CAF50" stroke-width="3" stroke-linecap="round" stroke-dasharray="6 4"/>
+
+    <!-- Leaves -->
+    <path d="M580 350 Q560 330 550 340 Q565 355 580 350" fill="#2E7D32" opacity="0.7"/>
+    <path d="M660 350 Q680 335 690 345 Q675 358 660 350" fill="#2E7D32" opacity="0.7"/>
+  </g>
+
+  <!-- Fruits on table -->
+  <!-- Apple/Orange left -->
+  <circle cx="350" cy="560" r="35" fill="#E65100"/>
+  <circle cx="350" cy="560" r="30" fill="#BF360C"/>
+  <circle cx="350" cy="560" r="25" fill="none" stroke="#FF8A65" stroke-width="2" stroke-dasharray="5 4" opacity="0.4"/>
+  <path d="M350 525 Q345 515 350 510 Q355 515 350 525" stroke="#4E342E" stroke-width="3" fill="#388E3C"/>
+
+  <!-- Apple/Orange right -->
+  <circle cx="430" cy="570" r="30" fill="#E65100"/>
+  <circle cx="430" cy="570" r="26" fill="#D84315"/>
+  <circle cx="430" cy="570" r="20" fill="none" stroke="#FF8A65" stroke-width="2" stroke-dasharray="4 4" opacity="0.3"/>
+  <path d="M430 540 Q425 530 430 525 Q435 530 430 540" stroke="#4E342E" stroke-width="3" fill="#388E3C"/>
+
+  <!-- Lemon -->
+  <ellipse cx="250" cy="580" rx="45" ry="28" fill="#F4D03F" transform="rotate(-15 250 580)"/>
+  <ellipse cx="250" cy="580" rx="40" ry="24" fill="#FFF8E1" transform="rotate(-15 250 580)" opacity="0.3"/>
+  <ellipse cx="250" cy="580" rx="35" ry="18" fill="none" stroke="#E6B800" stroke-width="2" stroke-dasharray="5 4" transform="rotate(-15 250 580)"/>
+  <path d="M250 552 Q245 542 250 538 Q255 542 250 552" fill="#2E7D32"/>
+
+  <!-- Grapes cluster -->
+  <g>
+    <circle cx="780" cy="560" r="14" fill="#4A148C"/>
+    <circle cx="800" cy="555" r="13" fill="#6A1B9A"/>
+    <circle cx="770" cy="575" r="13" fill="#4A148C"/>
+    <circle cx="790" cy="578" r="14" fill="#6A1B9A"/>
+    <circle cx="810" cy="570" r="12" fill="#4A148C"/>
+    <circle cx="780" cy="590" r="12" fill="#6A1B9A"/>
+    <circle cx="800" cy="592" r="11" fill="#4A148C"/>
+    <circle cx="790" cy="605" r="10" fill="#6A1B9A"/>
+    <path d="M790 540 Q785 530 790 525 Q795 530 790 540" stroke="#4E342E" stroke-width="2" fill="#2E7D32"/>
+  </g>
+
+  <!-- Bread/roll -->
+  <ellipse cx="950" cy="570" rx="60" ry="28" fill="#D4A017"/>
+  <ellipse cx="950" cy="565" rx="55" ry="22" fill="#BF360C" opacity="0.5"/>
+  <ellipse cx="950" cy="570" rx="50" ry="18" fill="none" stroke="#E65100" stroke-width="2" stroke-dasharray="6 4"/>
+  <!-- Bread scoring marks -->
+  <path d="M930 565 L940 555 M960 565 L970 555" stroke="#E65100" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- Cloth drape -->
+  <path d="M150 520 L200 680 L280 680 L230 520 Z" fill="#2980B9" opacity="0.3"/>
+  <path d="M150 520 L200 680 L280 680 L230 520 Z" fill="none" stroke="#3498DB" stroke-width="2" stroke-dasharray="6 4" opacity="0.4"/>
+
+  <!-- Kitchen knife -->
+  <rect x="880" y="600" width="80" height="6" rx="3" fill="#90A4AE" transform="rotate(-10 880 600)"/>
+  <rect x="958" y="598" width="30" height="10" rx="2" fill="#5D4037" transform="rotate(-10 880 600)"/>
+
+  <!-- Small herb sprig -->
+  <path d="M1050 520 Q1060 500 1070 490 Q1080 480 1085 470" stroke="#2E7D32" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M1065 495 Q1055 490 1060 485 Q1070 490 1065 495" fill="#4CAF50" opacity="0.6"/>
+  <path d="M1075 485 Q1065 480 1070 475 Q1080 480 1075 485" fill="#4CAF50" opacity="0.6"/>
+
+  <!-- Scattered brushstroke marks on table -->
+  <g stroke-linecap="round" fill="none" opacity="0.15">
+    <path d="M100 620 C200 600 300 630 400 610" stroke="#F4D03F" stroke-width="4" stroke-dasharray="8 5"/>
+    <path d="M800 640 C900 620 1000 650 1100 630" stroke="#F4D03F" stroke-width="3" stroke-dasharray="6 4"/>
+  </g>
+
+  <!-- Bottom text -->
+  <text x="600" y="760" fill="#F4D03F" font-family="serif" font-size="24" font-style="italic" text-anchor="middle" letter-spacing="6" opacity="0.6">RECIPE MANAGEMENT</text>
+</svg>

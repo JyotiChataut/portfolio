@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cream: #F0E0CF;
+  --deep: #1C0902;
+  --mocha: #5A2604;
+  --rust: #B85E10;
+  --gold: #EDB534;
+  --greige: #C4A882;
+  --ivory: #F5EBDF;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: clip;
+}
+
+body {
+  margin: 0;
+  overflow-x: clip;
+  background: var(--cream);
+  color: var(--mocha);
+  font-family: var(--font-dm-sans), sans-serif;
+}
+
+::selection {
+  background: var(--rust);
+  color: var(--ivory);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

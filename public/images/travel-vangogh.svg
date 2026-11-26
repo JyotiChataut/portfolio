@@ -1,0 +1,131 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="travelTitle travelDesc">
+  <title id="travelTitle">Travel — Van Gogh inspired landscape</title>
+  <desc id="travelDesc">A swirling starry night landscape with a winding road, evoking journey and discovery, painted in Van Gogh palette.</desc>
+
+  <!-- Sky gradient -->
+  <defs>
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A237E"/>
+      <stop offset="60%" stop-color="#283747"/>
+      <stop offset="100%" stop-color="#1B4F72"/>
+    </linearGradient>
+    <linearGradient id="landGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2E7D32"/>
+      <stop offset="100%" stop-color="#1B5E20"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky background -->
+  <rect width="1200" height="800" fill="url(#skyGrad)"/>
+
+  <!-- Stars — thick circular brushstrokes -->
+  <g>
+    <circle cx="200" cy="120" r="28" fill="#F4D03F" opacity="0.9"/>
+    <circle cx="200" cy="120" r="22" fill="#FFF8E1" opacity="0.5"/>
+    <circle cx="200" cy="120" r="32" fill="none" stroke="#F4D03F" stroke-width="3" stroke-dasharray="6 4" opacity="0.4"/>
+
+    <circle cx="950" cy="80" r="20" fill="#F4D03F" opacity="0.8"/>
+    <circle cx="950" cy="80" r="15" fill="#FFF8E1" opacity="0.4"/>
+    <circle cx="950" cy="80" r="24" fill="none" stroke="#F4D03F" stroke-width="3" stroke-dasharray="5 4" opacity="0.3"/>
+
+    <circle cx="700" cy="160" r="18" fill="#E6B800" opacity="0.7"/>
+    <circle cx="700" cy="160" r="13" fill="#FFF8E1" opacity="0.4"/>
+    <circle cx="700" cy="160" r="22" fill="none" stroke="#E6B800" stroke-width="2" stroke-dasharray="4 4" opacity="0.3"/>
+
+    <circle cx="450" cy="60" r="14" fill="#F4D03F" opacity="0.6"/>
+    <circle cx="450" cy="60" r="10" fill="#FFF8E1" opacity="0.3"/>
+
+    <circle cx="1100" cy="200" r="12" fill="#F4D03F" opacity="0.5"/>
+    <circle cx="1100" cy="200" r="8" fill="#FFF8E1" opacity="0.3"/>
+  </g>
+
+  <!-- Swirling sky brushstrokes -->
+  <g stroke-linecap="round" fill="none" opacity="0.35">
+    <path d="M50 180 C200 120 300 250 500 160 C700 70 850 220 1050 140 C1150 100 1200 180 1250 150" stroke="#4A148C" stroke-width="8" stroke-dasharray="12 8"/>
+    <path d="M0 220 C150 160 280 280 480 200 C680 120 820 260 1020 180 C1150 130 1200 210 1250 180" stroke="#6A1B9A" stroke-width="6" stroke-dasharray="10 6"/>
+    <path d="M0 260 C180 200 320 320 520 240 C720 160 860 300 1060 220" stroke="#283747" stroke-width="5" stroke-dasharray="8 6"/>
+    <path d="M50 300 C200 240 350 350 550 280 C750 210 900 340 1100 260" stroke="#1A237E" stroke-width="7" stroke-dasharray="14 7"/>
+  </g>
+
+  <!-- Additional swirling wave patterns in sky -->
+  <g stroke-linecap="round" fill="none" opacity="0.25">
+    <path d="M-20 180 C100 150 180 220 300 180 C420 140 500 210 620 170 C740 130 820 200 940 160 C1060 120 1140 190 1250 150" stroke="#F4D03F" stroke-width="4" stroke-dasharray="6 5"/>
+    <path d="M-20 210 C120 180 200 250 340 210 C480 170 560 240 700 200 C840 160 920 230 1060 190 C1180 160 1240 230 1300 190" stroke="#FFF8E1" stroke-width="2" stroke-dasharray="4 6"/>
+  </g>
+
+  <!-- Moon glow -->
+  <g opacity="0.2">
+    <circle cx="850" cy="100" r="60" fill="#F4D03F"/>
+    <circle cx="850" cy="100" r="80" fill="#F4D03F"/>
+    <circle cx="850" cy="100" r="100" fill="#F4D03F"/>
+  </g>
+
+  <!-- Distant rolling hills - land -->
+  <path d="M0 420 C200 380 350 460 550 420 C750 380 900 450 1200 410 L1200 800 L0 800 Z" fill="#2E7D32"/>
+  <path d="M0 440 C200 410 350 480 550 450 C750 420 900 480 1200 440 L1200 800 L0 800 Z" fill="#388E3C"/>
+  <path d="M0 470 C200 450 350 510 550 480 C750 450 900 500 1200 470 L1200 800 L0 800 Z" fill="#4CAF50" opacity="0.6"/>
+
+  <!-- Brushstroke texture on hills -->
+  <g stroke-linecap="round" fill="none" opacity="0.3">
+    <path d="M50 430 C150 410 200 440 300 420 C400 400 450 430 550 410" stroke="#1B5E20" stroke-width="4" stroke-dasharray="8 5"/>
+    <path d="M600 440 C700 420 750 450 850 430 C950 410 1000 440 1100 420" stroke="#1B5E20" stroke-width="4" stroke-dasharray="8 5"/>
+    <path d="M100 460 C200 440 250 470 350 450 C450 430 500 460 600 440" stroke="#2E7D32" stroke-width="3" stroke-dasharray="6 4"/>
+    <path d="M700 470 C800 450 850 480 950 460 C1050 440 1100 470 1150 450" stroke="#2E7D32" stroke-width="3" stroke-dasharray="6 4"/>
+  </g>
+
+  <!-- Winding road (journey path) -->
+  <path d="M600 480 C580 500 550 520 530 550 C510 580 540 620 520 660 C500 700 530 750 550 800" stroke="#D4A017" stroke-width="40" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
+  <path d="M600 480 C580 500 550 520 530 550 C510 580 540 620 520 660 C500 700 530 750 550 800" stroke="#E6B800" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+  <path d="M600 480 C580 500 550 520 530 550 C510 580 540 620 520 660 C500 700 530 750 550 800" stroke="none" fill="none"/>
+
+  <!-- Road side brushstrokes -->
+  <g stroke-linecap="round" fill="none" opacity="0.4">
+    <path d="M480 540 L460 570 M460 590 L440 620 M440 650 L420 680 M430 710 L410 750" stroke="#BF360C" stroke-width="5" stroke-dasharray="10 6"/>
+    <path d="M610 510 L630 540 M630 560 L650 590 M640 620 L660 650 M650 680 L670 720" stroke="#E65100" stroke-width="4" stroke-dasharray="8 6"/>
+  </g>
+
+  <!-- Cypress tree (Van Gogh signature) -->
+  <path d="M180 420 C170 350 200 300 190 260 C180 220 200 180 195 140 C190 100 200 70 195 50" stroke="#1B5E20" stroke-width="18" stroke-linecap="round" fill="none"/>
+  <path d="M180 420 C170 350 200 300 190 260 C180 220 200 180 195 140 C190 100 200 70 195 50" stroke="#2E7D32" stroke-width="12" stroke-linecap="round" fill="none" stroke-dasharray="8 4"/>
+  <path d="M180 420 C170 350 200 300 190 260 C180 220 200 180 195 140 C190 100 200 70 195 50" stroke="#4CAF50" stroke-width="4" stroke-linecap="round" fill="none" stroke-dasharray="4 6" opacity="0.5"/>
+  <!-- Cypress base -->
+  <path d="M175 420 L205 420" stroke="#1B5E20" stroke-width="6" stroke-linecap="round"/>
+  <path d="M175 400 L205 380 M175 380 L205 360" stroke="#2E7D32" stroke-width="3" stroke-linecap="round" opacity="0.4"/>
+
+  <!-- Small village in distance -->
+  <g fill="none" stroke-linecap="round">
+    <!-- House shapes -->
+    <rect x="780" y="390" width="22" height="18" fill="#BF360C" stroke="#3E2723" stroke-width="2"/>
+    <polygon points="775,392 791,372 807,392" fill="#E65100" stroke="#3E2723" stroke-width="2"/>
+    <rect x="770" y="400" width="8" height="8" fill="#F4D03F" opacity="0.6"/>
+
+    <rect x="820" y="385" width="20" height="22" fill="#6D4C41" stroke="#3E2723" stroke-width="2"/>
+    <polygon points="816,387 830,370 844,387" fill="#D4A017" stroke="#3E2723" stroke-width="2"/>
+    <rect x="808" y="397" width="8" height="10" fill="#F4D03F" opacity="0.5"/>
+
+    <rect x="860" y="395" width="16" height="12" fill="#BF360C" stroke="#3E2723" stroke-width="2"/>
+    <polygon points="857,397 868,382 879,397" fill="#E65100" stroke="#3E2723" stroke-width="2"/>
+  </g>
+
+  <!-- Foreground texture brushstrokes -->
+  <g stroke-linecap="round" fill="none" opacity="0.25">
+    <path d="M0 550 C100 530 200 560 300 540 C400 520 500 550 600 530 C700 510 800 540 900 520 C1000 500 1100 530 1200 510" stroke="#2E7D32" stroke-width="5" stroke-dasharray="10 5"/>
+    <path d="M0 600 C100 580 200 610 300 590 C400 570 500 600 600 580 C700 560 800 590 900 570 C1000 550 1100 580 1200 560" stroke="#388E3C" stroke-width="4" stroke-dasharray="8 6"/>
+    <path d="M0 650 C100 640 200 660 300 640 C400 620 500 650 600 630 C700 610 800 640 900 620 C1000 600 1100 630 1200 610" stroke="#1B5E20" stroke-width="3" stroke-dasharray="6 5"/>
+  </g>
+
+  <!-- Small flowers/grass dots in foreground -->
+  <g opacity="0.5">
+    <circle cx="120" cy="550" r="4" fill="#F4D03F"/>
+    <circle cx="160" cy="560" r="3" fill="#F4D03F"/>
+    <circle cx="350" cy="540" r="3" fill="#F4D03F"/>
+    <circle cx="850" cy="530" r="4" fill="#F4D03F"/>
+    <circle cx="900" cy="550" r="3" fill="#F4D03F"/>
+    <circle cx="1050" cy="520" r="3" fill="#F4D03F"/>
+    <circle cx="200" cy="580" r="3" fill="#FFF8E1"/>
+    <circle cx="750" cy="560" r="3" fill="#FFF8E1"/>
+  </g>
+
+  <!-- Bottom text overlay -->
+  <text x="600" y="760" fill="#F4D03F" font-family="serif" font-size="24" font-style="italic" text-anchor="middle" letter-spacing="6" opacity="0.6">GOLDEN TRAVEL</text>
+</svg>
