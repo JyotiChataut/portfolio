@@ -12,8 +12,15 @@ type ProjectPatchProps = {
 
 export function ProjectPatch({ project, index }: ProjectPatchProps) {
   const [open, setOpen] = useState(false)
+  const [activeImageIndex, setActiveImageIndex] = useState(0)
   const reduceMotion = useReducedMotion()
   const leftHeavy = index % 2 === 0
+
+  const gallery = project.gallery && project.gallery.length > 0 
+    ? project.gallery 
+    : [{ src: project.image, label: project.title }]
+
+  const currentImage = gallery[activeImageIndex] || gallery[0]
 
   return (
     <motion.article
@@ -26,14 +33,39 @@ export function ProjectPatch({ project, index }: ProjectPatchProps) {
       transition={{ duration: reduceMotion ? 0 : 0.6, ease: [0.16, 1, 0.3, 1] }}
       layout
     >
-      <div className={`${leftHeavy ? 'lg:col-span-7' : 'lg:col-span-5'} border-b border-greige lg:border-b-0 lg:border-r`}>
-        <Image
-          src={project.image}
-          alt={`${project.title} project screenshot`}
-          width={1200}
-          height={800}
-          className="h-full min-h-[260px] w-full object-cover"
-        />
+      <div className={`${leftHeavy ? 'lg:col-span-7' : 'lg:col-span-5'} flex flex-col justify-between overflow-hidden border-b border-greige bg-greige/10 lg:border-b-0 lg:border-r`}>
+        <div className="relative aspect-[16/10] w-full max-h-[380px] sm:max-h-[420px]">
+          <Image
+            key={currentImage.src}
+            src={currentImage.src}
+            alt={`${project.title} - ${currentImage.label}`}
+            fill
+            sizes="(max-width: 1024px) 100vw, 55vw"
+            className="object-cover object-top transition-opacity duration-300"
+          />
+        </div>
+
+        {gallery.length > 1 ? (
+          <div className="flex flex-wrap items-center gap-2 border-t border-greige bg-ivory/80 px-4 py-2.5">
+            <span className="mr-1 font-mono text-[10px] uppercase tracking-[0.16em] text-mocha/60">
+              Views:
+            </span>
+            {gallery.map((item, i) => (
+              <button
+                key={item.src}
+                type="button"
+                onClick={() => setActiveImageIndex(i)}
+                className={`border px-2.5 py-1 font-mono text-[11px] uppercase tracking-wider transition-colors ${
+                  activeImageIndex === i
+                    ? 'border-rust bg-rust/10 font-medium text-rust'
+                    : 'border-greige bg-ivory text-mocha hover:border-mocha/50'
+                }`}
+              >
+                {item.label}
+              </button>
+            ))}
+          </div>
+        ) : null}
       </div>
       <div className={`${leftHeavy ? 'lg:col-span-5' : 'lg:col-span-7'} flex flex-col justify-between p-6 sm:p-8 lg:p-10`}>
         <div>

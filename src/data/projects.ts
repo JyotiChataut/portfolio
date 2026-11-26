@@ -6,6 +6,10 @@ export type Project = {
   url?: string;
   repo: string;
   image: string;
+  gallery?: {
+    src: string;
+    label: string;
+  }[];
   caseStudy: {
     problem: string;
     approach: string;
@@ -22,6 +26,11 @@ export const projects: Project[] = [
     tags: ["Next.js 14", "Fastify 5", "TypeScript", "Drizzle ORM", "PostgreSQL", "Tailwind CSS"],
     repo: "https://github.com/JyotiChataut/Nuvola-Market",
     image: "/images/nuvola-market.jpg",
+    gallery: [
+      { src: "/images/nuvola-market.jpg", label: "Storefront Catalog" },
+      { src: "/images/nuvola-merchant-dashboard.jpg", label: "Merchant Dashboard" },
+      { src: "/images/nuvola-merchant-login.jpg", label: "Console Auth" },
+    ],
     caseStudy: {
       problem:
         "Modern commerce platforms often blur administrative logic into customer-facing apps, causing security risks, bloated bundle sizes, and slow checkout experiences under heavy traffic.",
@@ -38,7 +47,7 @@ export const projects: Project[] = [
       "An enterprise multi-tenant inventory management system featuring transactional ledger tracking, warehouse stock controls, purchase orders, asynchronous job processing with BullMQ & Redis, and a modern Radix UI dashboard.",
     tags: ["Next.js 15", "Fastify", "PostgreSQL", "BullMQ", "Redis", "Radix UI", "TanStack Table"],
     repo: "https://github.com/JyotiChataut/inventory-management-frontend",
-    image: "/images/inventory-platform.svg",
+    image: "/images/inventory-platform.jpg",
     caseStudy: {
       problem:
         "Inventory operations demand strict tenant isolation, zero inventory drift, and high responsiveness when handling large SKU catalogs, facility rebalances, and procurement cycles.",
