@@ -225,11 +225,14 @@ export function Hero() {
               </button>
 
               <div className="flex items-center justify-center overflow-hidden">
-                <img
+                <Image
                   key={lightboxIndex}
                   src={`/images/${lightboxIndex + 1}.jpg`}
                   alt={IMAGE_ALTS[lightboxIndex]}
-                  className="max-h-[92vh] max-w-[95vw] rounded-lg object-contain"
+                  width={1200}
+                  height={1200}
+                  priority
+                  className="max-h-[92vh] max-w-[95vw] h-auto w-auto rounded-lg object-contain"
                   draggable={false}
                 />
               </div>

@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { SectionReveal } from './SectionReveal'
 
 const hobbies = [
@@ -30,11 +31,13 @@ export function Hobbies() {
           Making outside the browser
         </h2>
         <div className="mt-10 grid overflow-hidden rounded-lg border border-hairline bg-canvas lg:grid-cols-5">
-          <div className="lg:col-span-2">
-            <img
+          <div className="relative min-h-[320px] lg:col-span-2">
+            <Image
               src="/images/crochet_2.jpg"
               alt="Crochet textile detail showing woven yarn texture"
-              className="h-full w-full min-h-[320px] object-cover"
+              fill
+              sizes="(max-width: 1024px) 100vw, 40vw"
+              className="object-cover"
             />
           </div>
           <div className="grid gap-6 p-6 sm:p-8 lg:col-span-3 lg:p-10">
