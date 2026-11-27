@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#001E2B"/>
+      <stop offset="100%" stop-color="#041217"/>
+    </linearGradient>
+    <linearGradient id="thread" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00ED64" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#71E5A5" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#0A4A3F" stop-opacity="0.1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Subtle grid lines -->
+  <g stroke="#2E4A43" stroke-width="1" opacity="0.35">
+    <line x1="80" y1="0" x2="80" y2="630"/>
+    <line x1="1120" y1="0" x2="1120" y2="630"/>
+    <line x1="0" y1="80" x2="1200" y2="80"/>
+    <line x1="0" y1="550" x2="1200" y2="550"/>
+  </g>
+
+  <!-- Flowing thread curves -->
+  <path d="M 0 460 C 300 380, 500 560, 850 420 C 1050 340, 1150 480, 1200 450" fill="none" stroke="url(#thread)" stroke-width="3"/>
+  <path d="M 0 480 C 280 400, 520 540, 820 440 C 1020 370, 1120 460, 1200 430" fill="none" stroke="#00ED64" stroke-width="1.5" opacity="0.5"/>
+  <path d="M 0 500 C 350 430, 600 580, 900 460 C 1100 390, 1180 500, 1200 470" fill="none" stroke="#71E5A5" stroke-width="1" stroke-dasharray="6 6" opacity="0.4"/>
+
+  <!-- Badge -->
+  <rect x="100" y="120" width="180" height="36" rx="18" fill="#0A4A3F" stroke="#2E4A43" stroke-width="1.5"/>
+  <circle cx="120" cy="138" r="5" fill="#00ED64"/>
+  <text x="136" y="143" font-family="'Segoe UI', -apple-system, sans-serif" font-size="12" font-weight="700" fill="#00ED64" letter-spacing="1.5">FRONTEND &amp; UI</text>
+
+  <!-- Title & Subtitle -->
+  <text x="100" y="240" font-family="'Segoe UI', -apple-system, sans-serif" font-size="64" font-weight="600" fill="#FFFFFF" letter-spacing="-1.5">Jyoti Chataut</text>
+  <text x="100" y="305" font-family="'Segoe UI', -apple-system, sans-serif" font-size="28" font-weight="400" fill="#71E5A5">Frontend Developer &amp; UI Engineer</text>
+  <text x="100" y="370" font-family="'Segoe UI', -apple-system, sans-serif" font-size="20" font-weight="400" fill="#9FB6AD">
+    Weaving deliberate interfaces with care for craft, typography, and interaction.
+  </text>
+
+  <!-- Tags -->
+  <g transform="translate(100, 480)" font-family="'SF Mono', monospace" font-size="14" fill="#9FB6AD">
+    <text x="0" y="0">Next.js 14</text>
+    <text x="105" y="0">·</text>
+    <text x="125" y="0">TypeScript</text>
+    <text x="235" y="0">·</text>
+    <text x="255" y="0">React</text>
+    <text x="315" y="0">·</text>
+    <text x="335" y="0">Tailwind CSS</text>
+    <text x="465" y="0">·</text>
+    <text x="485" y="0">Fastify</text>
+    <text x="555" y="0">·</text>
+    <text x="575" y="0">Framer Motion</text>
+  </g>
+
+  <!-- Location Indicator -->
+  <g transform="translate(980, 138)" font-family="'Segoe UI', -apple-system, sans-serif" font-size="14" fill="#9FB6AD">
+    <text x="0" y="0" text-anchor="end">Lalitpur, Nepal</text>
+  </g>
+</svg>
